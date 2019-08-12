@@ -5,6 +5,10 @@ class Cliente(models.Model):
     """
     Modelo para guardar os dados do Cliente
     """
+    empresa = models.ForeignKey(to='base.Empresa',
+                                on_delete=models.DO_NOTHING,
+                                null=True
+                                )
     nome = models.CharField(max_length=150)
     telefone = models.CharField(max_length=20)
     cidade = models.CharField(max_length=100,
