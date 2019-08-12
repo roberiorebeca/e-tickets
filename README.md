@@ -8,31 +8,65 @@ Este sistema tem a finalidade de controlar os chamados da empresa.
 
 ## Estrutura
 
-- Core
+- Base
   - Empresa
-  - Status
   - Modulos
+  - Usuários
 - Cadastros
   - Clientes
-  - Usuários
+  - Categorias
+  - Status
 - Movimentos
   - Chamados
+  - Anexos
+  - Base de Conhecimento
 
 ---
 
 ## Andamento do Desenvolvimento do Sistema
 
-- [x] Elaborar a Estrutura do Sistema
-- [ ] Estruturar o Backend
-  - Core
-    - [ ] Empresa
-    - [ ] Status
-    - [ ] Modulos
-  - Cadastros
-    - [ ] Clientes
-    - [ ] Usuários
-  - Movimentos
-    - [ ] Chamados
+- Base
+  - Empresa
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+  - Modulos
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+  - Usuários
+    - [ ] Estender tabela base do django
+    - [ ] Customizar campos
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+- Cadastros
+  - Clientes
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+  - Categorias
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+  - Status
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+- Movimentos
+  - Chamados
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+    - [ ] Criar ação para Adicionar Andamento
+    - [ ] Criar ação para pausar o atendimento
+    - [ ] Criar ação para retornar o atendimento
+    - [ ] Criar ação para cobrar retorno do usuário
+  - Base de Conhecimento
+    - [ ] Elaborar tabela no backend
+    - [ ] Criar estrutura de Admin
+    - [ ] Criar estrutura de API
+    - [ ] Criar ação para consultar palavras chaves
+    - [ ] Criar ação para listar relatório
 
 ---
 
