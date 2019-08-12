@@ -5,7 +5,7 @@ from cadastros.models import Cliente, Categoria, Status
 
 @admin.register(Cliente)
 class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('nome',)
+    list_display = ('nome', 'telefone', 'cidade')
 
 
 @admin.register(Categoria)

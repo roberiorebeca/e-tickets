@@ -22,13 +22,15 @@ class Chamado(models.Model):
                                 on_delete=models.DO_NOTHING,
                                 null=True,
                                 blank=True)
-    data_fechamento = models.DateTimeField()
+    data_fechamento = models.DateTimeField(null=True,
+                                           blank=True
+                                           )
     descricao = models.TextField(max_length=2000,
                                  verbose_name='descrição'
                                  )
 
     def __str__(self):
-        return self.pk
+        return f'{self.pk}'
 
     class Meta:
         verbose_name = 'chamado'
