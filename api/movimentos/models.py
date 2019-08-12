@@ -25,6 +25,9 @@ class Chamado(models.Model):
     data_fechamento = models.DateTimeField(null=True,
                                            blank=True
                                            )
+    assunto = models.CharField(max_length=400,
+                               help_text='Breve relato do chamado',
+                               null=True)
     descricao = models.TextField(max_length=2000,
                                  verbose_name='descrição'
                                  )
