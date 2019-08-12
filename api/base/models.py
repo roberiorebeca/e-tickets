@@ -29,6 +29,7 @@ class Empresa(models.Model):
 class Modulo(models.Model):
     """
     Modelo para guardar os dados do módulo do sistema
+    Exemplo: Financeiro, Fiscal, Faturamento, etc
     """
     descricao = models.CharField(max_length=100,
                                  verbose_name='descrição'
