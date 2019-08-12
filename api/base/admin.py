@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.utils.translation import gettext_lazy as _
 
-from base.models import Empresa, Modulos, Usuario
+from base.models import Empresa, Modulo, Usuario
 
 
 @admin.register(Empresa)
@@ -11,7 +11,7 @@ class EmpresaAdmin(admin.ModelAdmin):
     list_filter = ('cidade',)
 
 
-@admin.register(Modulos)
+@admin.register(Modulo)
 class ModulosAdmin(admin.ModelAdmin):
     list_display = ('descricao',)
 

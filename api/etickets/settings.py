@@ -39,7 +39,11 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_APPS = []
+THIRD_APPS = [
+    'rest_framework',
+    'rest_auth',
+    'rest_framework.authtoken',
+]
 
 LOCAL_APPS = [
     'base',

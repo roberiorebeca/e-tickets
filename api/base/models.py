@@ -26,7 +26,7 @@ class Empresa(models.Model):
         verbose_name_plural = 'empresas'
 
 
-class Modulos(models.Model):
+class Modulo(models.Model):
     """
     Modelo para guardar os dados do módulo do sistema
     """
