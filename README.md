@@ -27,36 +27,36 @@ Este sistema tem a finalidade de controlar os chamados da empresa.
 
 - Base
   - Empresa
-    - [ ] Elaborar tabela no backend
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Elaborar tabela no backend
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
   - Modulos
-    - [ ] Elaborar tabela no backend
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Elaborar tabela no backend
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
   - Usuários
-    - [ ] Estender tabela base do django
-    - [ ] Customizar campos
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Estender tabela base do django
+    - [x] Customizar campos
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
 - Cadastros
   - Clientes
-    - [ ] Elaborar tabela no backend
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Elaborar tabela no backend
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
   - Categorias
-    - [ ] Elaborar tabela no backend
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Elaborar tabela no backend
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
   - Status
-    - [ ] Elaborar tabela no backend
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Elaborar tabela no backend
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
 - Movimentos
   - Chamados
-    - [ ] Elaborar tabela no backend
-    - [ ] Criar estrutura de Admin
-    - [ ] Criar estrutura de API
+    - [x] Elaborar tabela no backend
+    - [x] Criar estrutura de Admin
+    - [x] Criar estrutura de API
     - [ ] Criar ação para Adicionar Andamento
     - [ ] Criar ação para pausar o atendimento
     - [ ] Criar ação para retornar o atendimento
