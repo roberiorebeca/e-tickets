@@ -21,4 +21,5 @@ urlpatterns = [
     path('rest-auth/', include('rest_auth.urls')),
     path('base/', include('base.urls')),
     path('cadastros/', include('cadastros.urls')),
+    path('movimentos/', include('movimentos.urls')),
 ]

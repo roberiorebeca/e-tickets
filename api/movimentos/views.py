@@ -1,3 +1,13 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from movimentos.models import Chamado
+from movimentos.serializers import ChamadoSerializer
+
+
+class ChamadoViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet para Modelo Chamado
+    """
+
+    serializer_class = ChamadoSerializer
+    queryset = Chamado.objects.all()
