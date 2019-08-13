@@ -33,12 +33,6 @@ class TesteCliente(TestCase):
         self.assertEqual(str(c), c.nome, 'Verifica o __str__ do Modelo')
         self.assertEqual(c.pk, 1, 'Verifica se salvou no banco')
 
-    def test_altera_cliente_altera_usuario(self):
-        c = Cliente.objects.update(nome='Teste1')
-        c.save()
-
-
-
 
 class TesteCategoria(TestCase):
     """
