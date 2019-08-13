@@ -1,5 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.db import models
+from django.db import models, transaction, IntegrityError
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
@@ -9,8 +9,6 @@ from base.models import Usuario
 class Cliente(models.Model):
     """
     Modelo para guardar os dados do Cliente
-    :TODO
-        Não estou conseguindo atualizar usuario quando atualiza os dados do Cliente
     """
     empresa = models.ForeignKey(to='base.Empresa',
                                 on_delete=models.DO_NOTHING,
@@ -36,34 +34,40 @@ class Cliente(models.Model):
 
 
 @receiver(post_save, sender=Cliente)
-def adicionar_cliente_adiciona_usuario(sender, instance, created, **kwargs):
-
+def criar_usuario_do_cliente(sender, instance, created, **kwargs):
+    post_save.disconnect(criar_usuario_do_cliente, sender=sender)
     if created:
         if instance.usuario is None:
-            usuario = Usuario.objects.create(username=instance.nome, password='123ABCD')
-            post_save.disconnect(Cliente, sender=sender)
-            instance.usuario = usuario
-            post_save.connect(Cliente, sender=sender)
+            try:
+                with transaction.atomic():
+                    u = Usuario.objects.create_user(instance.nome, None, '123ABCD')
+            except IntegrityError:
+                u = Usuario.objects.get(username=instance.nome)
+
+            instance.usuario = u
             instance.save()
     else:
         if instance.usuario is None:
-            usuario = Usuario.objects.create(username=instance.nome, password='123ABCD')
-            post_save.disconnect(Cliente, sender=sender)
-            instance.usuario = usuario
-            post_save.connect(Cliente, sender=sender)
+            try:
+                with transaction.atomic():
+                    u = Usuario.objects.create_user(instance.nome, None, '123ABCD')
+            except IntegrityError:
+                u = Usuario.objects.get(username=instance.nome)
+
+            instance.usuario = u
             instance.save()
         else:
-            post_save.disconnect(Cliente, sender=sender)
-            instance.usuario_cliente.filter(username=instance.usuario).update(username=instance.nome)
-            post_save.connect(Cliente, sender=sender)
-            instance.save()
+            u = instance.usuario
+            u.username = instance.nome
+            u.save()
 
-
+    post_save.connect(criar_usuario_do_cliente, sender=sender)
 
 
 class Categoria(models.Model):
     """
     Modelo para guardar os dados do Categoria
+    Ex: Dúvidas, Erros, Reclamações, Melhorias, Elogio, etc
     """
 
     descricao = models.CharField(max_length=100,
@@ -81,6 +85,7 @@ class Categoria(models.Model):
 class Status(models.Model):
     """
     Modelo para guardar os dados do Status
+    Ex: Pendente, Em Analise, etc
     """
     descricao = models.CharField(max_length=100,
                                  verbose_name='descrição'
