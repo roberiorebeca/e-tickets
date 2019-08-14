@@ -35,6 +35,10 @@ class Modulo(models.Model):
                                  verbose_name='descrição'
                                  )
 
+    @property
+    def descricao_display(self):
+        return f'{self.pk} - {self.descricao}'
+
     def __str__(self):
         return self.descricao
 

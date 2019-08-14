@@ -18,6 +18,7 @@ class ModuloSerializer(serializers.ModelSerializer):
     """
     Serializer para modelo dos Módulos
     """
+    descricao_display = serializers.CharField(max_length=100, read_only=True)
 
     class Meta:
         model = Modulo
